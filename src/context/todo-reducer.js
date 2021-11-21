@@ -5,7 +5,8 @@ const todoReducer = (state, action) =>{
         case FECTCH_TODOS:
         return{
          ...state,
-         todos: action.payload
+         todos: action.payload,
+         blackMode:!JSON.parse(localStorage.getItem('Mode'))
         }
 
         case ADDTO_TODO:
@@ -33,9 +34,10 @@ const todoReducer = (state, action) =>{
             }
 
             case BLACK_MODE:
+
                 return{
                     ...state,
-                    blackMode:true
+                    blackMode:!action.payload
                 }
 
         default:

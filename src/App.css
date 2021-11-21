@@ -1,5 +1,12 @@
-.pattern{
+.pattern-white{
   background-image: url("assets/bg-mobile-light.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+
+.pattern-dark{
+  background-image: url("assets/bg-mobile-dark.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   
