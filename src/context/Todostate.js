@@ -1,11 +1,12 @@
 import React, { useReducer } from 'react'
 import TodoContext from './todo-context'
 import todoReducer from './todo-reducer'
-import { FECTCH_TODOS, ADDTO_TODO, DELETE_TODO, TOGGLE_TODO, CLEAR_COMPLETED } from './todo-actions'
+import { FECTCH_TODOS, ADDTO_TODO, DELETE_TODO, TOGGLE_TODO, CLEAR_COMPLETED, BLACK_MODE} from './todo-actions'
 
 const TodoState = (props) => {
     const initialState = {
-     todos:[]
+     todos:[],
+     blackMode:false
     }
     const [state, dispatch] = useReducer(todoReducer, initialState)
 
@@ -82,6 +83,15 @@ const TodoState = (props) => {
        localStorage.setItem('Todos', JSON.stringify(newAllTodos))
     }
 
+
+    //Black Mode
+
+    const blackMd = () =>{
+      dispatch({
+        type:BLACK_MODE
+      })
+    }
+
     return (
         <TodoContext.Provider value={{
          todos:state.todos,
@@ -89,7 +99,9 @@ const TodoState = (props) => {
          addToTodo,
          deleteTodo,
          toggleTodo,
-         ClearCompleted
+         ClearCompleted,
+         blackMode:state.blackMode,
+         blackMd
         }}>
 
             {props.children}

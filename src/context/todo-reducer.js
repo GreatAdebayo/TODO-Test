@@ -1,4 +1,4 @@
-import {FECTCH_TODOS, ADDTO_TODO, DELETE_TODO, TOGGLE_TODO, CLEAR_COMPLETED} from './todo-actions'
+import {FECTCH_TODOS, ADDTO_TODO, DELETE_TODO, TOGGLE_TODO, CLEAR_COMPLETED, BLACK_MODE} from './todo-actions'
 
 const todoReducer = (state, action) =>{
     switch(action.type){
@@ -31,6 +31,12 @@ const todoReducer = (state, action) =>{
                 ...state,
                 todos: state.todos.filter(todo => todo.completed !== true)
             }
+
+            case BLACK_MODE:
+                return{
+                    ...state,
+                    blackMode:true
+                }
 
         default:
             return state

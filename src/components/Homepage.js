@@ -4,7 +4,7 @@ import TodoContext from '../context/todo-context'
 
 
 const Homepage = () => {
-    const { fecthTodos, todos, addToTodo, deleteTodo, toggleTodo,  ClearCompleted} = useContext(TodoContext)
+    const { fecthTodos, todos, addToTodo, deleteTodo, toggleTodo,  ClearCompleted, blackMd} = useContext(TodoContext)
 
     const newTodo = useRef();
 
@@ -26,6 +26,11 @@ const Homepage = () => {
 
     const clearCompleted = () =>{
         ClearCompleted();
+    }
+
+
+    const Blackmode = () =>{
+        blackMd();
     }
 
     useEffect(() => {
@@ -80,7 +85,7 @@ const Homepage = () => {
             </div>
 
          <div className="text-center mb-5">
-            <button className="btn btn-md btn-dark rounded"><small><strong>Dark Mode</strong></small></button>
+            <button className="btn btn-md btn-dark rounded" onClick={Blackmode}><small><strong>Dark Mode</strong></small></button>
          </div>
         </Fragment>
     )
