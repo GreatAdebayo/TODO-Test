@@ -35,6 +35,7 @@ const Homepage = () => {
 
     useEffect(() => {
         fecthTodos();
+    // eslint-disable-next-line
     }, [])
     return (
         <Fragment>
