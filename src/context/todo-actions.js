@@ -1,0 +1,5 @@
+export const FECTCH_TODOS = 'FECTCH_TODOS'
+export const ADDTO_TODO = 'ADDTO_TODO '
+export const DELETE_TODO = 'DELETE_TODO'
+export const TOGGLE_TODO = 'TOGGLE_TODO'
+export const CLEAR_COMPLETED = 'CLEAR_COMPLETED'
